@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"morsify/src/morse"
+)
+
 func main() {
-	print("lol")
+	fmt.Println(morse.TextToMorse("Hello, World!"))
 }
