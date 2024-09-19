@@ -2,14 +2,16 @@ package morse
 
 import "strings"
 
-func TextToMorse(text string) string {
-	var res string
+func TextToMorse(text string) (status string, res string) {
 	for _, v := range strings.ToUpper(text) {
 		res += " " + Translate(v)
 	}
-	return res
+	if len(res) < 1 {
+		return "fail", res
+	}
+	return "success", res
 }
 
 func Translate(char rune) string {
-	return MorseCodes[string(char)]
+	return Codes[string(char)]
 }

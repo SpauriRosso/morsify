@@ -2,17 +2,22 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"github.com/SpauriRosso/dotlog"
 	"morsify/src/server"
 	"runtime"
 )
 
+var addr string
+
 func main() {
-	err := startServer(":2633")
+	addr = ":2633"
+	launchTxt := fmt.Sprintf("Server started at %v", addr)
+	dotlog.Info(launchTxt)
+	err := startServer(addr)
 	if err != nil {
 		_, file, line, _ := runtime.Caller(1)
 		txtErr := fmt.Sprintf("%v:%v %v", file, line, err)
-		log.Fatalln(txtErr)
+		dotlog.Error(txtErr)
 	}
 }
 

@@ -1,7 +1,6 @@
 package morse
 
-var MorseCodes = map[string]string{
-	// Lettres
+var Codes = map[string]string{
 	"A": ".-",
 	"B": "-...",
 	"C": "-.-.",
@@ -29,7 +28,7 @@ var MorseCodes = map[string]string{
 	"Y": "-.--",
 	"Z": "--..",
 
-	// Chiffres
+	// Numbers
 	"0": "-----",
 	"1": ".----",
 	"2": "..---",
@@ -41,7 +40,7 @@ var MorseCodes = map[string]string{
 	"8": "---..",
 	"9": "----.",
 
-	// Ponctuation et symboles spéciaux
+	// Special characters
 	"!":  "-.-.--",
 	"?":  "..--..",
 	".":  ".-.-.-",
