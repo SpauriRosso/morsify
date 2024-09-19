@@ -16,6 +16,7 @@ func NewServer() *Server {
 }
 
 func (s *Server) Start(addr string) error {
+	s.Routes()
 	serv := &http.Server{
 		Addr:              addr,
 		Handler:           s.mux,
@@ -25,7 +26,8 @@ func (s *Server) Start(addr string) error {
 		IdleTimeout:       60 * time.Second,
 		MaxHeaderBytes:    1 << 20, // 1MB
 	}
-	key := "src/certfiles/dev/localhost-key.pem"
-	certFile := "src/certfiles/dev/localhost.pem"
-	return serv.ListenAndServeTLS(certFile, key)
+	//key := "src/certfiles/dev/localhost-key.pem"
+	//certFile := "src/certfiles/dev/localhost.pem"
+	//return serv.ListenAndServeTLS(certFile, key)
+	return serv.ListenAndServe()
 }
