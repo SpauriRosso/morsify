@@ -2,7 +2,7 @@ package morse
 
 import "strings"
 
-func TextToMorse(text string) (status string, res string) {
+func TextToMorse(statusc, text string) (status string, res string) {
 	for _, v := range strings.ToUpper(text) {
 		res += " " + Translate(v)
 	}

@@ -10,7 +10,7 @@ import (
 var addr string
 
 func main() {
-	addr = ":2633"
+	addr = ":5827"
 	launchTxt := fmt.Sprintf("Server started at %v", addr)
 	dotlog.Info(launchTxt)
 	err := startServer(addr)

@@ -36,4 +36,5 @@ func (s *Server) DemorsifyHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error: Invalid method", http.StatusMethodNotAllowed)
 		return
 	}
+
 }

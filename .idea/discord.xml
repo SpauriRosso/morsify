@@ -2,13 +2,13 @@
 <project version="4">
   <component name="DiscordProjectSettings">
     <option name="show" value="PROJECT_FILES" />
-    <option name="description" value="" />
+    <option name="description" value="Morsify is a versatile text to morse conversion" />
     <option name="applicationTheme" value="default" />
     <option name="iconsTheme" value="default" />
-    <option name="button1Title" value="" />
-    <option name="button1Url" value="" />
-    <option name="button2Title" value="" />
-    <option name="button2Url" value="" />
+    <option name="button1Title" value="Github Repo" />
+    <option name="button1Url" value="https://github.com/SpauriRosso/morsify" />
+    <option name="button2Title" value="Online demo" />
+    <option name="button2Url" value="https://morse.spyrisk.xyz/morsify?text=Hello%20World!" />
     <option name="customApplicationId" value="" />
   </component>
 </project>
