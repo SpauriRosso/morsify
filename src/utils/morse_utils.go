@@ -32,3 +32,11 @@ func NormalizePrompt(input string) string {
 	}
 	return prompt.String()
 }
+
+func InverseMapMorse(m map[string]string) map[string]string {
+	newMap := make(map[string]string, len(m))
+	for k, v := range m {
+		newMap[v] = k
+	}
+	return newMap
+}

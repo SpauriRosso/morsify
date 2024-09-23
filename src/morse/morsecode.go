@@ -1,5 +1,9 @@
 package morse
 
+import "morsify/src/utils"
+
+var MorseTxt = utils.InverseMapMorse(Codes)
+
 var Codes = map[string]string{
 	"A": ".-",
 	"B": "-...",

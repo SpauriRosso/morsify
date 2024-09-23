@@ -46,5 +46,17 @@ func (s *Server) DemorsifyHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error: Invalid method", http.StatusMethodNotAllowed)
 		return
 	}
+	input := r.URL.Query().Get("morse")
+	status, result := morse.MorseToText(input)
 
+	response := struct {
+		Status string `json:"status"`
+		Result string `json:"result"`
+	}{
+		Status: status,
+		Result: result,
+	}
+	w.Header().Set("Content-type", "application/json")
+	w.WriteHeader(http.StatusCreated)
+	json.NewEncoder(w).Encode(response)
 }
