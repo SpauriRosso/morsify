@@ -1,19 +1,21 @@
 package utils
 
 import (
+	"github.com/SpauriRosso/dotlog"
 	"golang.org/x/text/unicode/norm"
 	"strings"
 	"unicode"
 )
 
 func VerifyPrompt(input string) (status string, result string) {
-	result = NormalizePrompt(input)
-
-	for _, v := range result {
-		if !unicode.In(v, unicode.Latin) {
-			return "fail : non-latin character found", ""
+	for _, v := range input {
+		if !unicode.IsPunct(v) && !unicode.IsSpace(v) {
+			result += NormalizePrompt(string(v))
+		} else {
+			result += string(v)
 		}
 	}
+	dotlog.Debug(result)
 	return status, result
 }
 

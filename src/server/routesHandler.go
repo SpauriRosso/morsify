@@ -3,6 +3,7 @@ package server
 import (
 	"encoding/json"
 	"morsify/src/morse"
+	"morsify/src/utils"
 	"net/http"
 )
 
@@ -15,9 +16,18 @@ func (s *Server) MosrsifyHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error: Invalid method", http.StatusMethodNotAllowed)
 		return
 	}
-	prompt := r.URL.Query().Get("text")
+	input := r.URL.Query().Get("text")
+	status, prompt := utils.VerifyPrompt(input)
+	status, result := morse.TextToMorse(status, prompt)
 
-	status, result := morse.TextToMorse(prompt)
+	if result == "" || result == " " {
+		status = "fail : invalid character detected"
+	} else {
+		result = result[1:]
+	}
+	if input == "" || input == " " {
+		status, result = "fail : input is empty", ""
+	}
 
 	response := struct {
 		Status string `json:"status"`

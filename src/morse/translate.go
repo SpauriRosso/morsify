@@ -1,14 +1,19 @@
 package morse
 
-import "strings"
+import (
+	"strings"
+)
 
 func TextToMorse(statusc, text string) (status string, res string) {
+	if strings.Contains(statusc, "fail") {
+		status, res = statusc, ""
+		println(statusc)
+		return status, res
+	}
 	for _, v := range strings.ToUpper(text) {
 		res += " " + Translate(v)
 	}
-	if len(res) < 1 {
-		return "fail", res
-	}
+
 	return "success", res
 }
 
