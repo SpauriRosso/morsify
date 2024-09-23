@@ -7,7 +7,7 @@
 <h2>🚀 Demo</h2>
 
 [https://morse.spyrisk.xyz/morsify?text=Hello%20World!](https://morse.spyrisk.xyz/morsify?text=Hello%20World!)
-
+[https://morse.spyrisk.xyz/demorsify?text=...%20---%20...](https://morse.spyrisk.xyz/demorsify?text=...%20---%20...)
 
 
 <h2>🧐 Features</h2>
